@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>PALLAB Kumar Gorain — Advocate</title>
+  <meta name="description" content="Professional portfolio of Advocate & Law Student PALLAB Kumar Gorain."/>
+  <style>
+    :root {
+      --bg: #fdfdfd;
+      --text: #1a1a1a;
+      --muted: #555;
+      --accent: #c19d00;
+      --accent-dark: #927600;
+      --card: #ffffff;
+      --shadow: 0 4px 16px rgba(0,0,0,0.08);
+      --radius: 12px;
+    }
+    *{box-sizing:border-box;}
+    body {
+      margin:0;
+      font-family: "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height:1.6;
+    }
+    header {
+      background:linear-gradient(to right, #f5f2e7, #faf9f4);
+      text-align:center;
+      padding:40px 20px;
+      border-bottom:4px solid var(--accent);
+    }
+    header img {
+      width:140px;
+      height:140px;
+      border-radius:50%;
+      border:4px solid var(--accent);
+      object-fit:cover;
+      box-shadow: var(--shadow);
+    }
+    header h1 {
+      margin:16px 0 6px;
+      font-size:2rem;
+      color:var(--accent-dark);
+    }
+    header p {
+      margin:0;
+      color:var(--muted);
+    }
+    main {
+      max-width:1000px;
+      margin:40px auto;
+      padding:0 20px;
+      display:grid;
+      grid-template-columns:2fr 1fr;
+      gap:24px;
+    }
+    section, aside {
+      background:var(--card);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:24px;
+    }
+    h2 {
+      margin-top:0;
+      color:var(--accent-dark);
+    }
+    .intro {
+      font-size:1.05rem;
+    }
+    .stats {
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-top:16px;
+    }
+    .stat {
+      flex:1;
+      min-width:160px;
+      padding:12px;
+      border-radius:var(--radius);
+      background:#f9f9f9;
+      text-align:center;
+    }
+    .stat h3 {
+      margin:0;
+      color:var(--accent-dark);
+    }
+    aside h3 { margin-top:0; }
+    label {font-weight:600;font-size:0.9rem;}
+    input, textarea {
+      width:100%;
+      padding:10px;
+      margin:6px 0 12px;
+      border:1px solid #ccc;
+      border-radius:var(--radius);
+      font-family:inherit;
+      font-size:1rem;
+    }
+    button {
+      background:var(--accent);
+      color:#fff;
+      font-weight:bold;
+      border:none;
+      padding:12px 16px;
+      border-radius:var(--radius);
+      cursor:pointer;
+      transition: background 0.3s;
+    }
+    button:hover {background:var(--accent-dark);}
+    footer {
+      text-align:center;
+      margin:40px 0 20px;
+      font-size:0.9rem;
+      color:var(--muted);
+    }
+    @media (max-width:800px){
+      main {grid-template-columns:1fr;}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <!-- Replace the src with your real photo URL -->
+    <img src="https://via.placeholder.com/300x300.png?text=Your+Photo" alt="PALLAB Kumar Gorain photo"/>
+    <h1>PALLAB Kumar Gorain</h1>
+    <p>Law Student • Advocate in Purulia, West Bengal</p>
+    <p>Imamul Hai Khan Law College, Bokaro</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>About Me</h2>
+      <p class="intro">
+        I am a dedicated law student and aspiring advocate, actively working in Purulia courts, West Bengal. 
+        My focus is on providing professional legal representation, assisting clients with civil and criminal cases, 
+        and delivering clear, actionable legal advice. My journey at Imamul Hai Khan Law College, Bokaro, 
+        has strengthened my understanding of law and sharpened my courtroom skills.
+      </p>
+
+      <div class="stats">
+        <div class="stat">
+          <h3>Civil & Criminal</h3>
+          <p>Representation in both domains with attention to detail.</p>
+        </div>
+        <div class="stat">
+          <h3>Legal Research</h3>
+          <p>Strong background in drafting and academic analysis.</p>
+        </div>
+        <div class="stat">
+          <h3>Consultations</h3>
+          <p>Available for professional case discussions and guidance.</p>
+        </div>
+      </div>
+    </section>
+
+    <aside>
+      <h3>Contact Me</h3>
+      <form onsubmit="return contactForm(event)">
+        <label for="name">Name</label>
+        <input type="text" id="name" required/>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" required/>
+
+        <label for="message">Message</label>
+        <textarea id="message" rows="4" required></textarea>
+
+        <button type="submit">Send via Email</button>
+      </form>
+      <p><strong>Email:</strong> <a href="mailto:pallabgorain2@gmail.com">pallabgorain2@gmail.com</a></p>
+      <p><strong>Location:</strong> Purulia, West Bengal</p>
+      <p><strong>College:</strong> Imamul Hai Khan Law College, Bokaro</p>
+    </aside>
+  </main>
+
+  <footer>
+    &copy; 2025 PALLAB Kumar Gorain. All rights reserved.
+  </footer>
+
+  <script>
+    function contactForm(e){
+      e.preventDefault();
+      const name=document.getElementById('name').value;
+      const email=document.getElementById('email').value;
+      const msg=document.getElementById('message').value;
+      const subject=encodeURIComponent("New Consultation Request from "+name);
+      const body=encodeURIComponent("Name: "+name+"%0AEmail: "+email+"%0A%0A"+msg);
+      window.location.href="mailto:pallabgorain2@gmail.com?subject="+subject+"&body="+body;
+      return false;
+    }
+  </script>
+</body>
+                                      </html>
